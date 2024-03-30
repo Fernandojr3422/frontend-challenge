@@ -34,17 +34,22 @@ export const PrimaryInput = styled.input`
  `;
 
  //extends InputHTMLAttribute => Possui todas as caracteristicas de um input(value,placeholder..)
+ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string,
+  handleChange: (value: string ) => void
+}
 
- interface InputProps extends InputHTMLAttributes<HTMLInputElement>{}
-
- export function PrimaryInputWSearchIcon(props: InputProps){
-    return(
-        <InputContainer>
-            <PrimaryInput {...props} />
-            <SearchIcon/>
-        </InputContainer>
-    )
- }
+export function PrimaryInputWSearchIcon(props: InputProps){
+  return (
+      <InputContainer>
+          <PrimaryInput 
+              onChange={(event) => props.handleChange(event.target.value)} 
+              {...props}
+          />
+          <SearchIcon/>
+      </InputContainer>
+  )
+}
 
 
 

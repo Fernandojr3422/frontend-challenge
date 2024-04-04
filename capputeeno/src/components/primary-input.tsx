@@ -4,7 +4,7 @@ import { InputHTMLAttributes } from "react";
 
 
 export const PrimaryInput = styled.input`
-  width: 352px;
+  width: 100%;
   border-radius: 8px ;
   padding: 10px 16px;
   border: none;
@@ -19,16 +19,23 @@ export const PrimaryInput = styled.input`
 
 `;
 
+//ele que define o input de fato
  const InputContainer = styled.div`
-   
+   //configuração para tamanho default
    position: relative;
-   width: 352px; //posso mexe no icone pra onde quizer
+   width: 250px; //posso mexe no icone pra onde quizer
 
    svg {
         position: absolute;
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+   }
+
+   //configuraçaõa para telas maiores
+   @media(min-width: 768px){
+    width: 352px; //posso mexe no icone pra onde quizer
+ 
    }
    
  `;

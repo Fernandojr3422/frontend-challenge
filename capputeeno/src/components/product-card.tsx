@@ -62,7 +62,7 @@ export function ProductCard(props:ProductCardProps){
 
     return(
         <Card>
-            <img src={props.image} />
+            <img src = {props.image} />
             <div>
                 <h3>{props.title}</h3>
                 <div></div>
